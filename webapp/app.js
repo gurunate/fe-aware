@@ -57,7 +57,20 @@ var routes = [
         handler: function (request, reply) {
             var data = {
                 title: 'FE Aware',
-                message: 'Hello, World. Your crazy handlebars layout'
+                message: 'Hello, World. Your crazy handlebars layout',
+                data: JSON.stringify([
+                    {
+                        type: "doughnut",
+                        startAngle: 60,
+                        toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+                        showInLegend: true,
+                        dataPoints: [
+                            {y: 65899660, indexLabel: "Barack Obama #percent%", legendText: "Barack Obama"},
+                            {y: 60929152, indexLabel: "Mitt Romney #percent%", legendText: "Mitt Romney"},
+                            {y: 2175850, indexLabel: "Others #percent%", legendText: "Others"}
+                        ]
+                    }
+                ])
             };
 
             return reply.view('index', data);

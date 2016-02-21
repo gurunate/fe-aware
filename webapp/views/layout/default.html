@@ -1,12 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        title: {
+                            text: '{{title}}'
+                        },
+                        animationEnabled: true,
+//                        data: JSON.parse('{{data}}')
+                        data: [
+                            {
+//                                type: "doughnut",
+//                                startAngle: 60,
+//                                toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+//                                showInLegend: true,
+
+                                type: "doughnut",
+                                indexLabelFontFamily: "Garamond",
+                                indexLabelFontSize: 20,
+                                startAngle:0,
+                                indexLabelFontColor: "dimgrey",
+                                indexLabelLineColor: "darkgrey",
+//                                toolTipContent: "{y} %",
+                                toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+
+                                dataPoints: [
+                                    {y: 65899660, indexLabel: "Barack Obama #percent%", legendText: "Barack Obama"},
+                                    {y: 60929152, indexLabel: "Mitt Romney #percent%", legendText: "Mitt Romney"},
+                                    {y: 2175850, indexLabel: "Others #percent%", legendText: "Others"}
+                                ]
+                            }
+                        ]
+                    });
+            chart.render();
+        }
+    </script>
+    <script type="text/javascript" src="/js/canvasjs.min.js"></script>
 </head>
 <body>
-
-{{message}}
+<div id="chartContainer" style="height: 400px; width: 700px;"></div>
 
 </body>
 </html>

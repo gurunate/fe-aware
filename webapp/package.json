@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nate Johnson",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "config": "^1.19.0",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.0.0",
+    "hapi-auth-basic": "^4.1.0",
+    "inert": "^3.2.0",
+    "vision": "^4.0.1",
+    "winston": "^2.1.1"
+  }
+}

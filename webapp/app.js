@@ -50,45 +50,35 @@ server.register([
 });
 
 
-var routes = [
-    {
-        method: 'GET',
-        path: '/',
-        handler: function (request, reply) {
-            var data = {
-                title: 'FE Aware',
-                message: 'Hello, World. Your crazy handlebars layout',
-                data: JSON.stringify([
-                    {
-                        type: "doughnut",
-                        startAngle: 60,
-                        toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
-                        showInLegend: true,
-                        dataPoints: [
-                            {y: 65899660, indexLabel: "Barack Obama #percent%", legendText: "Barack Obama"},
-                            {y: 60929152, indexLabel: "Mitt Romney #percent%", legendText: "Mitt Romney"},
-                            {y: 2175850, indexLabel: "Others #percent%", legendText: "Others"}
-                        ]
-                    }
-                ])
-            };
+var routes = [{
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        var dataPoints = [
+            {y: 65899660, indexLabel: "Trusted (#percent%)", legendText: "Trusted"},
+            {y: 60929152, indexLabel: "3rd Party (#percent%)", legendText: "3rd Party"},
+            {y: 2175850, indexLabel: "Others #percent%", legendText: "Others"}
+        ];
 
-            return reply.view('index', data);
-        }
-    },
-    // static content
-    {
-        method: 'GET',
-        path: '/{param*}',
-        handler: {
-            directory: {
-                path: 'public',
-                redirectToSlash: true,
-                index: true
-            }
+        var data = {
+            title: 'FE Aware',
+            message: 'Hello, World. Your crazy handlebars layout',
+            dataPoints: JSON.stringify(dataPoints)
+        };
+
+        return reply.view('index', data);
+    }
+}, {
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: 'public',
+            redirectToSlash: true,
+            index: true
         }
     }
-];
+}];
 
 server.route(routes);
 

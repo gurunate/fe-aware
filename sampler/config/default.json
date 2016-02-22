@@ -1,0 +1,10 @@
+{
+  "trusted": {
+    "www.cars.com": true,
+    "graphics.cars.com": true,
+    "metrics.cars.com": true,
+    "www.cstatic-graphics.com": true,
+    "www.cstatic-images.com": true,
+    "www.cstatic-car-pictures.com": true
+  }
+}

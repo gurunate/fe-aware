@@ -1,5 +1,13 @@
-# Sampling
+# fe-aware Sampler
+
+## Setup
 
 ```
-node sample.js <http://your.website.com>
+$ npm install
+```
+
+## Sampling
+
+```
+$ node sample.js <http://your.website.com>
 ```

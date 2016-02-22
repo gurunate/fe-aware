@@ -35,3 +35,4 @@ node_modules
 # Local IDE
 .idea/
 fe-aware.iml
+*/logs

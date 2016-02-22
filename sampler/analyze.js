@@ -12,12 +12,12 @@ const ObjectId = require('mongodb').ObjectID;
 require('moment-duration-format');
 
 // load config
-let trusted = config.get('trusted');
+let trusted = config.get('sites.trusted');
 
 let doc_id = process.argv[2] || '56bf67d61b63c9c700cdcc62';
 
 // Use connect method to connect to the Server
-MongoClient.connect('mongodb://localhost:27017/fe-aware', function (err, db) {
+MongoClient.connect('mongodb://' + config.get('db.host') + '/' + config.get('db.database'), function (err, db) {
     if (err) throw err;
 
     db.collection('hars').findOne({"_id": new ObjectId(doc_id)}, function (err, har) {

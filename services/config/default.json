@@ -1,0 +1,15 @@
+{
+  "logging": {
+    "filename": "logs/fe-aware.log"
+  },
+  "server": {
+    "name": "FE Aware services",
+    "port": 9200
+  },
+  "db": {
+    "host": "localhost:27017",
+    "database": "fe-aware",
+    "username": "",
+    "password": ""
+  }
+}

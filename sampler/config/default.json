@@ -1,10 +1,21 @@
 {
-  "trusted": {
-    "www.cars.com": true,
-    "graphics.cars.com": true,
-    "metrics.cars.com": true,
-    "www.cstatic-graphics.com": true,
-    "www.cstatic-images.com": true,
-    "www.cstatic-car-pictures.com": true
+  "logging": {
+    "filename": "logs/fe-aware.log"
+  },
+  "sites": {
+    "trusted": {
+      "www.cars.com": true,
+      "graphics.cars.com": true,
+      "metrics.cars.com": true,
+      "www.cstatic-graphics.com": true,
+      "www.cstatic-images.com": true,
+      "www.cstatic-car-pictures.com": true
+    }
+  },
+  "db": {
+    "host": "localhost:27017",
+    "database": "fe-aware",
+    "username": "",
+    "password": ""
   }
 }

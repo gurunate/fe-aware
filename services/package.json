@@ -9,6 +9,7 @@
   "author": "Nate Johnson",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.3.1",
     "config": "^1.19.0",
     "lodash": "^4.5.1",
     "minimist": "^1.2.0",

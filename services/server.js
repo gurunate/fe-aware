@@ -70,17 +70,23 @@ function findHARs() {
         MongoClient.connect('mongodb://' + config.get('db.host') + '/' + config.get('db.database'), function (err, db) {
             if (err) reject(err);
 
-            db.collection('hars').find({}, {
-                "log.pages.title": 1,
-                "log.pages.id": 1,
-                "log.pages.startedDateTime": 1
-            }).toArray(function (err, docs) {
-                if (err) reject(err);
+            db.collection('hars')
+                .aggregate([{
+                    $unwind: "$log.pages"
+                }, {
+                    $project: {
+                        url: "$log.pages.id",
+                        title: "$log.pages.title",
+                        duration: "$log.pages.startedDateTime"
+                    }
+                }])
+                .toArray(function (err, docs) {
+                    if (err) reject(err);
 
-                resolve(docs);
+                    resolve(docs);
 
-                db.close();
-            });
+                    db.close();
+                });
         });
     });
 }
